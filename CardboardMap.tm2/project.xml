@@ -6,11 +6,11 @@
   <Parameter name="attribution"><![CDATA[Map data © OpenStreetMap contributors]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
   <Parameter name="center">-10.43701171875,56.078167004692844,6</Parameter>
-  <Parameter name="description"><![CDATA[Tilemill 2 Map Style based on a Paperboard look]]></Parameter>
+  <Parameter name="description"><![CDATA[Tilemill 2 Map Style based on a Carboard look]]></Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
   <Parameter name="minzoom">0</Parameter>
-  <Parameter name="name"><![CDATA[Paperboard Map]]></Parameter>
+  <Parameter name="name"><![CDATA[Cardboard Map]]></Parameter>
   <Parameter name="scale">1</Parameter>
   <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-streets-v3]]></Parameter>
 </Parameters>

@@ -1,4 +1,4 @@
-#Paperboard Map
+#Cardboard Map
 
 Tilemill 2 Map Style based on a Paperboard look.
 
