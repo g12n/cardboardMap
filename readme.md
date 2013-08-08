@@ -1,5 +1,7 @@
 #Paperboard Map
 
+Tilemill 2 Map Style based on a Paperboard look.
+
 ![Expample 1][img1]
 ![Example 2][img2]
 
