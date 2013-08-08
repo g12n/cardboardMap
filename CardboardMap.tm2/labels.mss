@@ -5,7 +5,7 @@
   text-face-name: 'Source Sans Pro Bold';
   text-wrap-width: 100;
   text-wrap-before: true;
-  text-fill: #66a;
+  text-fill: #666;
   text-size: 12;
   [zoom>=3][scalerank=1],
   [zoom>=4][scalerank=2],
