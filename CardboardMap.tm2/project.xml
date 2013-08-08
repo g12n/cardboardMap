@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Map[]>
-<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#dddddd" background-image="textures/paper-texture.jpg" buffer-size="20" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#dddddd" background-image="textures/paper-texture.jpg" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
 
 <Parameters>
   <Parameter name="attribution"><![CDATA[Map data © OpenStreetMap contributors]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">7.03125,50.94458443495011,5</Parameter>
+  <Parameter name="center">-4.5263671875,53.91081008725409,6</Parameter>
   <Parameter name="description"><![CDATA[Tilemill 2 Map Style based on a Carboard look]]></Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
@@ -16,11 +16,6 @@
 </Parameters>
 
 
-<Style name="landuse-maske" filter-mode="first" image-filters="agg-stack-blur(20,20)">
-  <Rule>
-    <Filter>([class] = 'park')</Filter>
-  </Rule>
-</Style>
 <Style name="landuse-texture" filter-mode="first">
   <Rule>
     <Filter>([class] = 'park')</Filter>
@@ -29,8 +24,7 @@
 </Style>
 <Layer name="landuse"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>landuse-texture</StyleName>
-    <StyleName>landuse-maske</StyleName>  </Layer>
+    <StyleName>landuse-texture</StyleName>  </Layer>
 
 <Style name="waterway" filter-mode="first">
   <Rule>
@@ -104,7 +98,7 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>waterway</StyleName>  </Layer>
 
-<Style name="water-shadow" filter-mode="first" image-filters="agg-stack-blur(10,10)" comp-op="screen">
+<Style name="water-shadow" filter-mode="first" image-filters="agg-stack-blur(20,20)" comp-op="screen">
   <Rule>
     <PolygonSymbolizer fill="#ffffff" fill-opacity="0.7" />
   </Rule>
@@ -143,10 +137,15 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
-<Style name="tunnel-inset" filter-mode="first" image-filters="agg-stack-blur(1,1)">
+<Style name="tunnel-inset" filter-mode="first" image-filters="agg-stack-blur(0,0),agg-stack-blur(1,1)">
   <Rule>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="0.4" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.7" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke-width="0.6" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -188,58 +187,58 @@
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke-width="5" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke="#000000" stroke-width="1" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke-width="5" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke="#000000" stroke-width="1" simplify="1" smooth="1" />
   </Rule>
   <Rule>
@@ -251,10 +250,15 @@
     <StyleName>tunnel</StyleName>
     <StyleName>tunnel-inset</StyleName>  </Layer>
 
-<Style name="road-inset" filter-mode="first" image-filters="agg-stack-blur(1,1)">
+<Style name="road-inset" filter-mode="first" image-filters="agg-stack-blur(0,0),agg-stack-blur(1,1)">
   <Rule>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="0.4" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.7" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke-width="0.6" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -359,10 +363,15 @@
     <StyleName>road</StyleName>
     <StyleName>road-inset</StyleName>  </Layer>
 
-<Style name="bridge-inset" filter-mode="first" image-filters="agg-stack-blur(1,1)">
+<Style name="bridge-inset" filter-mode="first" image-filters="agg-stack-blur(0,0),agg-stack-blur(1,1)">
   <Rule>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="0.4" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.7" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke-width="0.6" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -682,13 +691,7 @@
 
 <Style name="area_label" filter-mode="first">
   <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([class] = 'park') and ([area] &gt; 500000)</Filter>
-    <TextSymbolizer face-name="Source Sans Pro Italic" fill="#2f8c2f" size="13" wrap-width="100" wrap-before="true" ><![CDATA[[name_en]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([class] = 'park') and ([area] &gt; 500000)</Filter>
     <TextSymbolizer face-name="Source Sans Pro Italic" fill="#2f8c2f" size="13" wrap-width="100" wrap-before="true" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>

@@ -70,3 +70,19 @@
     [zoom>=16] { text-size: 16; }
   }
 }
+
+#area_label {
+  [class='park'] {
+    [zoom<=13],  // automatic area filtering @ low zooms
+    [zoom>=14][area>500000],
+    [zoom>=16][area>10000],
+    [zoom>=17] {
+      text-name: @name;
+      text-face-name: 'Source Sans Pro Italic';
+      text-fill: darken(@park, 50%);
+      text-size: 13;
+      text-wrap-width: 100;
+      text-wrap-before: true;
+    }
+  }
+}

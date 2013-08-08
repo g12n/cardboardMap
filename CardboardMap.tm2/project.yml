@@ -8,15 +8,15 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - 7.03125
-  - 50.94458443495011
-  - 5
+  - -4.5263671875
+  - 53.91081008725409
+  - 6
 description: Tilemill 2 Map Style based on a Carboard look
 format: "png8:m=h"
 interactivity_layer: ''
 maxzoom: 22
 minzoom: 0
-mtime: 1375990864418
+mtime: 1375998649857
 name: Cardboard Map
 scale: 1
 source: "mapbox:///mapbox.mapbox-streets-v3"
