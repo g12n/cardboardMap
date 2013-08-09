@@ -5,7 +5,7 @@
 <Parameters>
   <Parameter name="attribution"><![CDATA[Map data © OpenStreetMap contributors]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-4.5263671875,53.91081008725409,6</Parameter>
+  <Parameter name="center">-4.866943359375,54.23955053156177,6</Parameter>
   <Parameter name="description"><![CDATA[Tilemill 2 Map Style based on a Carboard look]]></Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
@@ -51,46 +51,46 @@
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([type] = 'canal')</Filter>
+    <Filter>([type] = 'river')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#c3e6ff" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([type] = 'canal')</Filter>
+    <Filter>([type] = 'river')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#c3e6ff" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'canal')</Filter>
+    <Filter>([type] = 'river')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#c3e6ff" />
   </Rule>
   <Rule>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([type] = 'canal')</Filter>
+    <Filter>([type] = 'river')</Filter>
     <LineSymbolizer stroke="#c3e6ff" stroke-width="0.5" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([type] = 'river')</Filter>
+    <Filter>([type] = 'canal')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#c3e6ff" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([type] = 'river')</Filter>
+    <Filter>([type] = 'canal')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#c3e6ff" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'river')</Filter>
+    <Filter>([type] = 'canal')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#c3e6ff" />
   </Rule>
   <Rule>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([type] = 'river')</Filter>
+    <Filter>([type] = 'canal')</Filter>
     <LineSymbolizer stroke="#c3e6ff" stroke-width="0.5" />
   </Rule>
 </Style>
@@ -137,19 +137,14 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
-<Style name="tunnel-inset" filter-mode="first" image-filters="agg-stack-blur(0,0),agg-stack-blur(1,1)">
+<Style name="tunnel-inset" filter-mode="first" image-filters="agg-stack-blur(1,1)">
   <Rule>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.4" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke-width="0" stroke="#ffffff" offset="0" simplify="1" smooth="1" geometry-transform="translate(2, 0)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.6" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <LineSymbolizer stroke="#ffffff" stroke-width="1" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke="#ffffff" stroke-width="1" offset="0" simplify="1" smooth="1" geometry-transform="translate(2, 0)" />
   </Rule>
 </Style>
 <Style name="tunnel" filter-mode="first" comp-op="multiply" opacity="0.2">
@@ -203,13 +198,7 @@
     <LineSymbolizer stroke-width="2" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#000000" simplify="1" smooth="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>750000</MinScaleDenominator>
     <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke="#000000" stroke-width="1" simplify="1" smooth="1" />
   </Rule>
@@ -231,13 +220,7 @@
     <LineSymbolizer stroke-width="2" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#000000" simplify="1" smooth="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>750000</MinScaleDenominator>
     <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke="#000000" stroke-width="1" simplify="1" smooth="1" />
   </Rule>
@@ -250,19 +233,14 @@
     <StyleName>tunnel</StyleName>
     <StyleName>tunnel-inset</StyleName>  </Layer>
 
-<Style name="road-inset" filter-mode="first" image-filters="agg-stack-blur(0,0),agg-stack-blur(1,1)">
+<Style name="road-inset" filter-mode="first" image-filters="agg-stack-blur(1,1)">
   <Rule>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.4" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke-width="0" stroke="#ffffff" offset="0" simplify="1" smooth="1" geometry-transform="translate(2, 0)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.6" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <LineSymbolizer stroke="#ffffff" stroke-width="1" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke="#ffffff" stroke-width="1" offset="0" simplify="1" smooth="1" geometry-transform="translate(2, 0)" />
   </Rule>
 </Style>
 <Style name="road" filter-mode="first" comp-op="multiply" opacity="0.2">
@@ -316,13 +294,7 @@
     <LineSymbolizer stroke-width="2" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#000000" simplify="1" smooth="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>750000</MinScaleDenominator>
     <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke="#000000" stroke-width="1" simplify="1" smooth="1" />
   </Rule>
@@ -344,13 +316,7 @@
     <LineSymbolizer stroke-width="2" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#000000" simplify="1" smooth="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>750000</MinScaleDenominator>
     <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke="#000000" stroke-width="1" simplify="1" smooth="1" />
   </Rule>
@@ -363,19 +329,14 @@
     <StyleName>road</StyleName>
     <StyleName>road-inset</StyleName>  </Layer>
 
-<Style name="bridge-inset" filter-mode="first" image-filters="agg-stack-blur(0,0),agg-stack-blur(1,1)">
+<Style name="bridge-inset" filter-mode="first" image-filters="agg-stack-blur(1,1)">
   <Rule>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.4" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke-width="0" stroke="#ffffff" offset="0" simplify="1" smooth="1" geometry-transform="translate(2, 0)" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="0.6" stroke="#ffffff" offset="0" geometry-transform="translate(2, 1)" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <LineSymbolizer stroke="#ffffff" stroke-width="1" offset="0" geometry-transform="translate(2, 1)" />
+    <LineSymbolizer stroke="#ffffff" stroke-width="1" offset="0" simplify="1" smooth="1" geometry-transform="translate(2, 0)" />
   </Rule>
 </Style>
 <Style name="bridge" filter-mode="first" comp-op="multiply" opacity="0.2">
@@ -413,58 +374,46 @@
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke-width="5" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#000000" simplify="1" smooth="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <Filter>([class] = 'main')</Filter>
     <LineSymbolizer stroke="#000000" stroke-width="1" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke-width="5" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke-width="3" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#000000" simplify="1" smooth="1" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
     <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#000000" simplify="1" smooth="1" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <Filter>([class] = 'motorway')</Filter>
     <LineSymbolizer stroke="#000000" stroke-width="1" simplify="1" smooth="1" />
   </Rule>
   <Rule>

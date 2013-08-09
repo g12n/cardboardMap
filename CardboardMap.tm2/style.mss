@@ -78,7 +78,6 @@ Map {
   	line-smooth: 1;
     [class='motorway'],
     [class='main'] {
-      [zoom>=10] {line-width:1}
       [zoom>=12] {line-width:2}
       [zoom>=14] {line-width:3}
       [zoom>=16] {line-width:5}
@@ -93,13 +92,12 @@ Map {
     	line-color:#fff;
       	line-width:1;
       	line-offset:0;
-     	line-geometry-transform: "translate(2, 1)";
-      	image-filters: agg-stack-blur(1,1);
-		[zoom<=14]{line-width:0.6}
-    	[zoom<=5]{
-        	line-width:0.4;
-      		image-filters: agg-stack-blur(0,0);
-    	}
+       	line-simplify:1;
+  		line-smooth: 1;
+     	line-geometry-transform: "translate(2, 0)";
+        image-filters: agg-stack-blur(1,1);
+    	[zoom<=5] {line-width:0}
+
     }
 }
 /* Buildings */
