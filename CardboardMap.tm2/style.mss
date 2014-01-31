@@ -7,6 +7,7 @@
 Map {
   background-color:#ddd;
   background-image:url("textures/paper-texture.jpg");
+  buffer-size: 200
 }
 
 // Water Features //
@@ -15,7 +16,7 @@ Map {
   polygon-gamma: 0.6;
   polygon-pattern-file: url("textures/water.jpg");
   comp-op: multiply;
-  ::shadow{
+  ::highlight{
     polygon-fill: #fff;
     polygon-opacity:0.7;
     image-filters: agg-stack-blur(20,20);
