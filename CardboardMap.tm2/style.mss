@@ -4,10 +4,11 @@
 @water: #c3e6ff;
 @park: #cec;
 
+
 Map {
   background-color:#ddd;
   background-image:url("textures/paper-texture.jpg");
-  buffer-size: 200
+  buffer-size: 100;
 }
 
 // Water Features //
@@ -19,7 +20,8 @@ Map {
   ::highlight{
     polygon-fill: #fff;
     polygon-opacity:0.7;
-    image-filters: agg-stack-blur(20,20);
+    image-filters: agg-stack-blur(10,20);
+   // image-filters-inflate: true;
 	comp-op: screen;
   }
 }
